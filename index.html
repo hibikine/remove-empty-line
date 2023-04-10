@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>空行を消す</title>
+  </head>
+  <body>
+    <h1>空行を消す</h1>
+
+    <label for="inputBox">Input text:</label><br />
+    <textarea id="inputBox" rows="10" cols="50"></textarea><br />
+
+    <label for="outputBox">Output text:</label><br />
+    <textarea id="outputBox" rows="10" cols="50" readonly></textarea><br />
+
+    <button onclick="removeEmptyLines()">Remove empty lines</button>
+
+    <script>
+      function removeEmptyLines() {
+        // Get the input text
+        var inputText = document.getElementById('inputBox').value;
+
+        // Remove empty lines from the input text
+        var outputText = inputText.replace(/^\s*[\r\n]/gm, '');
+
+        // Set the output text
+        document.getElementById('outputBox').value = outputText;
+      }
+    </script>
+  </body>
+</html>
